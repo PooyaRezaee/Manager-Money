@@ -1,8 +1,8 @@
+import platform
 import os
 from PyQt5 import QtCore, QtGui, QtWidgets
-from Setting_app import Words
+from Setting_Programm import Words
 from Data_Base import Func_DataBase
-
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -56,13 +56,21 @@ class Ui_Dialog(object):
         # ================== Coding ==================
         Func_DataBase.set_setting(Dialog)
 
+        if "Linux" in platform.platform():
+            open_url = "xdg-open"
+        elif "Window" in platform.platform():
+            open_url = "start"
+        else:
+            open_url = "firefox"
+            print("is a problem in open url")
+
         self.link_gmail.clicked.connect(lambda: self.send_gmail())
         
         # in windows with command start "target Site" open site in chrom
         self.link_GitHub.clicked.connect(lambda: os.system(
-            "start https://github.com/PooyaRezaee"))
+            f"{open_url} https://github.com/PooyaRezaee"))
         self.link_Linkin.clicked.connect(lambda: os.system(
-            "start https://www.linkedin.com/in/pooya-rezaee-moghadam-1700721b9"))
+            f"{open_url} https://www.linkedin.com/in/pooya-rezaee-moghadam-1700721b9"))
 
     def send_gmail(self):
         self.win_alert_gmail = QtWidgets.QMessageBox()

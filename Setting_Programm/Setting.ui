@@ -98,7 +98,7 @@
         </item>
         <item>
          <widget class="QSpinBox" name="input_num">
-          <property name="wrapping">
+          <property name="wrProgramming">
            <bool>false</bool>
           </property>
           <property name="frame">

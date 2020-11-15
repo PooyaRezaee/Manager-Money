@@ -3,11 +3,11 @@ import json
 import qdarkstyle
 from PyQt5 import QtCore, QtGui, QtWidgets
 from Add_information.add import Ui_Dialog as page_add
-from Setting_app.Setting import Ui_Dialog as page_setting
-from Info_App.Info import Ui_Dialog as page_info
+from Setting_Programm.Setting import Ui_Dialog as page_setting
+from Info_Programm.Info import Ui_Dialog as page_info
 from Data_Base import Func_DataBase
 from Windows_passwords.page_unloock import Ui_Dialog as page_unlook_password
-from Setting_app import Words
+from Setting_Programm import Words
 from datetime import datetime
 
 class Ui_MainWindow(object):
@@ -150,7 +150,7 @@ class Ui_MainWindow(object):
         try:
             with open("setting.json", 'r') as File:
                 File = json.load(File)
-                if File["language_app"] != "English":
+                if File["language_Programm"] != "English":
                     self.centralwidget.setLayoutDirection(QtCore.Qt.RightToLeft)
                     
                 self.them = File["them"]
@@ -187,7 +187,7 @@ class Ui_MainWindow(object):
         self.btn_delete.setStatusTip("Delete Item")
         self.btn_setting.setStatusTip("Setting program")
         self.btn_s_g.setStatusTip("This Create Comming Soon ")
-        self.btn_info.setStatusTip("Info App And Developer")
+        self.btn_info.setStatusTip("Info Programm And Developer")
         self.rdb_received.setStatusTip("Filter On Table")
         self.rdb_Payments.setStatusTip("Filter On Table")
         self.rdb_all.setStatusTip("Filter On Table")
@@ -307,7 +307,7 @@ class Ui_MainWindow(object):
         def command_btn_save():
             self.win_aleart = QtWidgets.QMessageBox()
             self.win_aleart.setWindowTitle("Restart")
-            self.win_aleart.setText(Words.translate_words(Words.restart_app))
+            self.win_aleart.setText(Words.translate_words(Words.restart_Programm))
             self.win_aleart.show()
 
             dialog.close()

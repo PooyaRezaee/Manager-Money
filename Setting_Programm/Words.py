@@ -63,7 +63,7 @@ them = {"English": "Them        : ", "Persian": " تم :                        
 light = {"English": "light", "Persian": "روشن","Arabic": "مشرق"}
 dark = {"English": "dark", "Persian": "تاريك","Arabic": "داكن"}
 comming_soon = {"English": "comming soon !!! :)", "Persian": "بزودی !!! :)","Arabic": "هكذا !!! :)"}
-restart_app = {"English": "program open againe for aplly Setting", "Persian": "برای اعمال تنيیمات برنامه دوباره باز کنید","Arabic": "افتح التطبيق مرة أخرى لتطبيق الإعدادات"}
+restart_Programm = {"English": "program open againe for aplly Setting", "Persian": "برای اعمال تنيیمات برنامه دوباره باز کنید","Arabic": "افتح التطبيق مرة أخرى لتطبيق الإعدادات"}
 M_Enter_amount = {"English": "You must Enter Number in amount", "Persian": "شما باید در قسمت مبلغ عدد وارد کنید","Arabic": "يجب إدخال رقم في حقل المبلغ"}
 M_Enter_from_to = {"English": "You must Enter From/To", "Persian": "شما باید از/به را وارد کنید","Arabic": "يجب أن تدخل من / إلى"}
 M_Enter_type = {"English": "You must Enter Type", "Persian": "شما باید نوع را انتخاب کنید","Arabic": "عليك أن تختار النوع"}
@@ -71,7 +71,7 @@ M_Enter_type = {"English": "You must Enter Type", "Persian": "شما باید ن
 def translate_words(word):
     try:
         with open("setting.json", "r") as File:
-            language = json.load(File)["language_app"]
+            language = json.load(File)["language_Programm"]
     except:
         language = "English"
     try:

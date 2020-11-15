@@ -2,7 +2,7 @@ import sys
 import hashlib
 from PyQt5 import QtCore, QtGui, QtWidgets
 from Data_Base import Func_DataBase
-from Setting_app import Words
+from Setting_Programm import Words
 
 
 class Ui_Dialog(object):

@@ -1,7 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QDialog
 import Data_Base.Func_DataBase as Func_DataBase
-from Setting_app import Words
+from Setting_Programm import Words
 import json
 
 class Ui_Dialog(QDialog):
@@ -170,7 +170,7 @@ class Ui_Dialog(QDialog):
         try:
             with open("setting.json", 'r') as File:
                 File = json.load(File)
-                if File["language_app"] != "English":
+                if File["language_Programm"] != "English":
                     self.widget.setLayoutDirection(QtCore.Qt.RightToLeft)  
         except:
             pass

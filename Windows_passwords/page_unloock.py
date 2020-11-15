@@ -2,7 +2,7 @@ import sys
 import hashlib
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
-from Setting_app import Words
+from Setting_Programm import Words
 from Data_Base import Func_DataBase
 
 

@@ -1,7 +1,7 @@
 import json
 from PyQt5 import QtCore, QtGui, QtWidgets
 from Data_Base import Func_DataBase
-from Setting_app import Words
+from Setting_Programm import Words
 from Windows_passwords.set_password import Ui_Dialog as page_set_password
 from Windows_passwords.page_unloock import Ui_Dialog as page_unlook_password
 
@@ -135,7 +135,7 @@ class Ui_Dialog(object):
         try:
             with open("setting.json", 'r') as File:
                 File = json.load(File)
-                if File["language_app"] != "English":
+                if File["language_Programm"] != "English":
                     self.tabWidget.setLayoutDirection(QtCore.Qt.RightToLeft)
         except:
             pass
@@ -178,7 +178,7 @@ class Ui_Dialog(object):
         else:
             self.them = "dark"
 
-        settings_setting = {"language_app": self.combo_languge.currentText(), "type_font": self.combo_font.currentText(),
+        settings_setting = {"language_Programm": self.combo_languge.currentText(), "type_font": self.combo_font.currentText(),
                             "size_font": self.input_num.text(), "them": self.them}
         json_file_setting = json.dumps(settings_setting)
         with open("setting.json", "w") as File:
@@ -187,7 +187,7 @@ class Ui_Dialog(object):
     def set_setting(self):
         with open("setting.json", "r") as File:
             setting = json.load(File)
-            self.combo_languge.setCurrentText(setting["language_app"])
+            self.combo_languge.setCurrentText(setting["language_Programm"])
             self.combo_font.setCurrentText(setting["type_font"])
             self.input_num.setValue(int(setting["size_font"]))
 
@@ -363,9 +363,9 @@ class Ui_Dialog(object):
 
 if __name__ == "__main__":
     import sys
-    app = QtWidgets.QApplication(sys.argv)
+    Programm = QtWidgets.QApplication(sys.argv)
     Dialog = QtWidgets.QDialog()
     ui = Ui_Dialog()
     ui.setupUi(Dialog)
     Dialog.show()
-    sys.exit(app.exec_())
+    sys.exit(Programm.exec_())
